@@ -1,0 +1,50 @@
+﻿@model notienendqver.Models.Visitum
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar visita</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CodVisita" />
+            <div class="form-group">
+                <label asp-for="FechaVisita" class="control-label"></label>
+                <input asp-for="FechaVisita" class="form-control" />
+                <span asp-validation-for="FechaVisita" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DespVisita" class="control-label"></label>
+                <input asp-for="DespVisita" class="form-control" />
+                <span asp-validation-for="DespVisita" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodBeneficiario" class="control-label">Nombre Beneficiario</label>
+                <select asp-for="CodBeneficiario" class="form-control" asp-items="ViewBag.CodBeneficiario"></select>
+                <span asp-validation-for="CodBeneficiario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodVivienda" class="control-label">Codigo Vivienda</label>
+                <select asp-for="CodVivienda" class="form-control" asp-items="ViewBag.CodVivienda"></select>
+                <span asp-validation-for="CodVivienda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaCreacion" class="control-label"></label>
+                <input asp-for="FechaCreacion" class="form-control" />
+                <span asp-validation-for="FechaCreacion" class="text-danger"></span>
+            </div>
+            <hr />
+            <div>
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-danger">Regresar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

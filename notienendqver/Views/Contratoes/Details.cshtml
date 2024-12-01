@@ -1,0 +1,37 @@
+﻿@model notienendqver.Models.Contrato
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles Contrato</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoContrato)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TipoContrato)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaCreacion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaCreacion)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.CodViviendaNavigation)*@
+            Nombre de Vivienda  
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodViviendaNavigation.DirVivienda)
+        </dd>
+    </dl>
+    <hr />
+</div>
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model?.CodContrato">Editar</a> *@
+    <a asp-action="Index" class="btn btn-primary">Regresar</a>
+</div>

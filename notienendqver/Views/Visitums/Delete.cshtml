@@ -1,0 +1,52 @@
+﻿@model notienendqver.Models.Visitum
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Borrar</h1>
+
+<h3>¿Deseas borrar una visita?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaVisita)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaVisita)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DespVisita)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DespVisita)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaCreacion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaCreacion)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.CodBeneficiarioNavigation)*@
+            Nombre Beneficiario
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodBeneficiarioNavigation.NombreCBeneficiario)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.CodViviendaNavigation)*@
+            Direccion Vivienda
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodViviendaNavigation.DirVivienda)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="CodVisita" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> 
+        <a asp-action="Index" class="btn btn-warning">Regresar</a>
+    </form>
+</div>

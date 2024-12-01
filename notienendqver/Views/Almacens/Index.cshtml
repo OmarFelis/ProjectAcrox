@@ -1,0 +1,47 @@
+﻿@model IEnumerable<notienendqver.Models.Almacen>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Almacen</h1>
+<hr/>
+<table class="table table-light">
+    <thead class="table table-success">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreAlmacen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LugarAlmacen)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.FechaCreacion)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreAlmacen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LugarAlmacen)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.FechaCreacion)
+            </td>*@
+            <td>
+                    <a asp-action="Edit" class="fa-solid fa-folder-plus" asp-route-id="@item.CodAlmacen"></a>
+                    <a asp-action="Details" class="fa-solid fa-circle-info" asp-route-id="@item.CodAlmacen"></a>
+                    <a asp-action="Delete" class="fa-solid fa-trash" asp-route-id="@item.CodAlmacen"></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div>
+    <a asp-action="Create" class="btn btn-success">Agregar Almacen</a>
+</div>

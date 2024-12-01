@@ -1,0 +1,56 @@
+﻿@model notienendqver.Models.Viviendum
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar Vivienda</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CodVivienda" />
+            <div class="form-group">
+                <label asp-for="DirVivienda" class="control-label"></label>
+                <input asp-for="DirVivienda" class="form-control" />
+                <span asp-validation-for="DirVivienda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AreaVivienda" class="control-label"></label>
+                <input asp-for="AreaVivienda" class="form-control" />
+                <span asp-validation-for="AreaVivienda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstadoVivienda" class="control-label"></label>
+                <input asp-for="EstadoVivienda" class="form-control" />
+                <span asp-validation-for="EstadoVivienda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoVivienda" class="control-label"></label>
+                <input asp-for="TipoVivienda" class="form-control" />
+                <span asp-validation-for="TipoVivienda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodBeneficiario" class="control-label">Nombre Beneficiario</label>
+                <select asp-for="CodBeneficiario" class="form-control" asp-items="ViewBag.CodBeneficiario"></select>
+                <span asp-validation-for="CodBeneficiario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaCreacion" class="control-label"></label>
+                <input asp-for="FechaCreacion" class="form-control" />
+                <span asp-validation-for="FechaCreacion" class="text-danger"></span>
+            </div>
+            <hr />
+            <div>
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-danger">Regresar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

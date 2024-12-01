@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="loginModalLabel">Inicio de Sesión</h4>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm"  method="post">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="username" name="Username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" name="Password" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fondo">
+    <div>
+        <h1>ACROX</h1>
+        <p>Gestión de Viviendas con el Fondo Mi Vivienda</p>
+    </div>
+    <div class="main-content">
+        <a asp-area="" asp-controller="Beneficiarios" asp-action="Index" class="card position-relative">
+            <h2 class="position-relative">Gestionar Beneficiarios <i class=" translate-middle position-absolute esquina fs-1 fa-solid fa-people-roof"></i></h2>
+
+            <p>Realiza operaciones de creación, lectura, actualización y eliminación de beneficiarios.</p>
+
+        </a>
+        <a asp-area="" asp-controller="Viviendums" asp-action="Index" class="card position-relative">
+            <h2 class="position-relative">Gestionar <br /> Viviendas<i class=" translate-middle position-absolute esquina fs-1 fa-solid fa-house"></i></h2>
+            <p>Asocia cada beneficiario a una vivienda específica. Administra las características y detalles de cada vivienda disponible en el programa.</p>
+        </a>
+
+        <div class="card">
+            <h2 class="position-relative">Generar Comprobantes <br /> De Beneficiarios<i class=" translate-middle position-absolute esquina fs-1 fa-solid fa-file-invoice"></i></h2>
+            <p>Genera informes detallados de los beneficiarios, incluyendo toda su información y el estado de sus beneficios.</p>
+        </div>
+
+        <a asp-area="" asp-controller="Almacens" asp-action="Index" class="card position-relative">
+            <h2 class="position-relative">Gestionar <br /> Almacenes<i class=" translate-middle position-absolute esquina fs-1 fa-solid fa-boxes-stacked"></i></h2>
+            <p>Designa y administra almacenes para diferentes materiales necesarios en las viviendas. Lleva un control preciso de los inventarios.</p>
+        </a>
+
+        <a asp-area="" asp-controller="Proveedors" asp-action="Index" class="card position-relative">
+            <h2 class="position-relative">Gestionar <br /> Proveedores<i class=" translate-middle position-absolute esquina fs-1 fa-solid fa-helmet-safety"></i></h2>
+            <p>Realiza operaciones para gestionar los proveedores. Mantén una lista actualizada y detallada de todos los proveedores y sus materiales.</p>
+        </a>
+
+        <a asp-area="" asp-controller="Materials" asp-action="Index" class="card position-relative">
+            <h2 class="position-relative">Gestionar <br /> Materiales<i class=" translate-middle position-absolute esquina fs-1 fa-solid fa-toolbox"></i></h2>
+            <p>Lleva un registro detallado de todos los materiales, asignándolos a almacenes y proveedores específicos.</p>
+        </a>
+    </div>
+</div>
+

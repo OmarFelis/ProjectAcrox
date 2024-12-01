@@ -1,0 +1,52 @@
+﻿@model notienendqver.Models.Material
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Agregar Material</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NombMaterial" class="control-label"></label>
+                <input asp-for="NombMaterial" class="form-control" />
+                <span asp-validation-for="NombMaterial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DescrpMaterial" class="control-label"></label>
+                <input asp-for="DescrpMaterial" class="form-control" />
+                <span asp-validation-for="DescrpMaterial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrecioMaterial" class="control-label"></label>
+                <input asp-for="PrecioMaterial" class="form-control" />
+                <span asp-validation-for="PrecioMaterial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodVivienda" class="control-label">Direccion Vivienda</label>
+                <select asp-for="CodVivienda" class ="form-control" asp-items="ViewBag.CodVivienda"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodProveedor" class="control-label">Nombre Proveedor</label>
+                <select asp-for="CodProveedor" class ="form-control" asp-items="ViewBag.CodProveedor"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodAlmacen" class="control-label">Nombre Almacen</label>
+                <select asp-for="CodAlmacen" class ="form-control" asp-items="ViewBag.CodAlmacen"></select>
+            </div>
+            <hr />
+            <div>
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-danger">Regresar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

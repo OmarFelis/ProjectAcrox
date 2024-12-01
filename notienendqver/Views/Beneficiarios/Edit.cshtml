@@ -1,0 +1,57 @@
+﻿@model notienendqver.Models.Beneficiario
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar Beneficiario</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CodBeneficiario" />
+            <div class="form-group">
+                <label asp-for="NombreCBeneficiario" class="control-label"></label>
+                <input asp-for="NombreCBeneficiario" class="form-control" />
+                <span asp-validation-for="NombreCBeneficiario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DniBeneficiario" class="control-label"></label>
+                <input asp-for="DniBeneficiario" class="form-control" />
+                <span asp-validation-for="DniBeneficiario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstadoBeneficiario" class="control-label"></label>
+                <select asp-for="EstadoBeneficiario" class="form-select">
+                    <option value="Activo">Activo</option>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="Rechazado">Rechazado</option>
+                </select>
+                <span asp-validation-for="EstadoBeneficiario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechBeneficiario" class="control-label"></label>
+                <input type="date" asp-for="FechBeneficiario" class="form-control" />
+                <span asp-validation-for="FechBeneficiario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaCreacion" class="control-label"></label>
+                <input asp-for="FechaCreacion" class="form-control" />
+                <span asp-validation-for="FechaCreacion" class="text-danger"></span>
+            </div>
+            <hr />
+            <div>
+                <input type="submit" value="Guardar" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-primary">Regresar</a>
+            </div>
+        </form>
+    </div>
+
+
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

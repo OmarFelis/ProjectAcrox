@@ -1,0 +1,50 @@
+﻿@model notienendqver.Models.Beneficiario
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Eliminar Beneficiario</h1>
+
+<h3>¿Deseas borrar este beneficiario?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NombreCBeneficiario)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NombreCBeneficiario)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DniBeneficiario)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DniBeneficiario)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EstadoBeneficiario)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EstadoBeneficiario)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechBeneficiario)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechBeneficiario)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaCreacion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaCreacion)
+        </dd>
+    </dl>
+    <hr />
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="CodBeneficiario" />
+        <input type="submit" value="Delete" class="btn btn-danger"/>
+        <a asp-action="Index" class="btn btn-primary">Regresar</a>
+    </form>
+</div>

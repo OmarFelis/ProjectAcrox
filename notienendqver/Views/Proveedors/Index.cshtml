@@ -1,0 +1,61 @@
+﻿@model IEnumerable<notienendqver.Models.Proveedor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Proveedores</h1>
+<hr />
+<table class="table table-light">
+    <thead class="table table-success">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombProveedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelfProveedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DirProveedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoProveedor)
+            </th>
+            @*
+            <th>
+                @Html.DisplayNameFor(model => model.FechaCreacion)
+            </th>*@
+            <th></th> 
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombProveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelfProveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DirProveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoProveedor)
+            </td>
+            @*
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaCreacion)
+            </td>*@
+            <td>
+                    <a asp-action="Edit" class="fa-solid fa-pen-to-square" asp-route-id="@item.CodProveedor"></a>
+                    <a asp-action="Details" class="fa-solid fa-circle-info" asp-route-id="@item.CodProveedor"></a>
+                    <a asp-action="Delete" class="fa-solid fa-trash" asp-route-id="@item.CodProveedor"></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<p>
+    <a asp-action="Create" class="btn btn-success">Crear proveedores</a>
+</p>

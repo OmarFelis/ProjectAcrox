@@ -1,0 +1,76 @@
+﻿@model IEnumerable<notienendqver.Models.Material>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Materiales</h1>
+<hr />
+<table class="table table-light">
+    <thead class="table table-success">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombMaterial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescrpMaterial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioMaterial)
+
+             </th>
+             @*
+            <th>
+                 @Html.DisplayNameFor(model => model.FechaCreacion)
+            </th> 
+            <th>
+                @Html.DisplayNameFor(model => model.CodAlmacenNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodProveedorNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodViviendaNavigation)
+            </th>
+            *@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombMaterial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescrpMaterial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioMaterial)
+            </td>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.FechaCreacion)
+            </td> 
+            <td>
+                @Html.DisplayFor(modelItem => item.CodAlmacenNavigation.CodAlmacen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodProveedorNavigation.CodProveedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodViviendaNavigation.CodVivienda)
+            </td>
+            *@
+            <td>
+                    <a asp-action="Edit" class="fa-solid fa-pen-to-square" asp-route-id="@item.CodMaterial"></a>
+                    <a asp-action="Details" class="fa-solid fa-circle-info" asp-route-id="@item.CodMaterial"></a>
+                    <a asp-action="Delete" class="fa-solid fa-trash" asp-route-id="@item.CodMaterial"></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<p>
+    <a asp-action="Create" class="btn btn-success">Crear Material</a>
+    <button class="btn btn-secondary">Crear Lista de Materiales</button>
+</p>

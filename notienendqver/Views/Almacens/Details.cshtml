@@ -1,0 +1,42 @@
+﻿@model notienendqver.Models.Almacen
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles</h1>
+
+<div>
+    <h4>Almacen</h4>
+    <hr />
+    <dl class="row" style="background-color:white">
+        @*<dtt class="col-sm-2"> 
+            @Html.DisplayNameFor(model => model.CodAlmacen)
+        </dtt>
+        <dd class="col-sm-10 ">  
+            @Html.DisplayNameFor(model => model.CodAlmacen)
+        </dd>*@
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NombreAlmacen)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NombreAlmacen)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LugarAlmacen)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LugarAlmacen)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaCreacion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaCreacion)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-primary">Volver a la lista</a>
+    <button class="btn btn-primary"> Ver Materiales del Almacen</button>
+</div>

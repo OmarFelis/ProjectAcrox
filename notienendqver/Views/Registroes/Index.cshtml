@@ -1,0 +1,64 @@
+﻿@model IEnumerable<notienendqver.Models.Registro>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Registros</h1>
+<hr />
+<table class="table table-light">
+    <thead class="table table-success">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FechRegistro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescrpRegistro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoRegistro)
+            </th>
+            @*
+            <th>
+                @Html.DisplayNameFor(model => model.FechaCreacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodViviendaNavigation)
+            </th>
+            *@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechRegistro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescrpRegistro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoRegistro)
+            </td>
+            @*
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaCreacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodViviendaNavigation.CodVivienda)
+            </td>
+            *@
+            <td>
+                    <a asp-action="Edit" class="fa-solid fa-file-pen" asp-route-id="@item.CodRegistro"></a>
+                    <a asp-action="Details" class="fa-solid fa-circle-info" asp-route-id="@item.CodRegistro"></a>
+                    <a asp-action="Delete" class="fa-solid fa-trash" asp-route-id="@item.CodRegistro"></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<p>
+    <a asp-action="Create" class="btn btn-success">Crear proveedores</a>
+</p>
+

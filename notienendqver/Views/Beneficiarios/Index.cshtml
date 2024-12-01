@@ -1,0 +1,63 @@
+﻿@model IEnumerable<notienendqver.Models.Beneficiario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Beneficiarios</h1>
+<hr />
+<table class="table table-light">
+    <thead class="table table-success">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreCBeneficiario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DniBeneficiario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoBeneficiario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechBeneficiario)
+            </th>
+            @*
+            <th>
+            @Html.DisplayNameFor(model => model.FechaCreacion)
+            </th>
+            *@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCBeneficiario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DniBeneficiario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoBeneficiario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechBeneficiario)
+            </td>
+            @*
+            <td>
+            @Html.DisplayFor(modelItem => item.FechaCreacion)
+            </td>
+            *@
+            <td>
+                    <a asp-action="Edit" class="fa-solid fa-user-pen" asp-route-id="@item.CodBeneficiario"></a>
+                    <a asp-action="Details" class="fa-solid fa-circle-info" asp-route-id="@item.CodBeneficiario"></a>
+                    <a asp-action="Delete" class="fa-solid fa-trash" asp-route-id="@item.CodBeneficiario"></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<p>
+    <a asp-action="Create" class="btn btn-success">Crear Beneficiario</a>
+</p>

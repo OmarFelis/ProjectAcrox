@@ -1,0 +1,54 @@
+﻿@model notienendqver.Models.Registro
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles Registro</h1>
+
+<div>
+    <hr />
+    <dl class="row" style="background-color:white">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CodRegistro)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CodRegistro)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechRegistro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechRegistro)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DescrpRegistro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DescrpRegistro)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoRegistro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TipoRegistro)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaCreacion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaCreacion)
+        </dd>
+        <dt class = "col-sm-2">
+            @*@Html.DisplayNameFor(model => model.CodViviendaNavigation)*@
+            Direccion Vivienda
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodViviendaNavigation.DirVivienda)
+        </dd>
+    </dl>
+</div>
+<hr />
+<div>
+    <a asp-action="Index" class="btn btn-danger">Regresar</a>
+</div>

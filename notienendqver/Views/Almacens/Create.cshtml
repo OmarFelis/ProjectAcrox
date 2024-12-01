@@ -1,0 +1,82 @@
+﻿@model notienendqver.Models.Almacen
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Agregar Almacén</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NombreAlmacen" class="control-label"></label>
+                <input asp-for="NombreAlmacen" class="form-control" />
+                <span asp-validation-for="NombreAlmacen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LugarAlmacen" class="control-label"></label>
+                <input asp-for="LugarAlmacen" class="form-control" />
+                <span asp-validation-for="LugarAlmacen" class="text-danger"></span>
+            </div>
+            <hr />
+            <div>
+                <input type="submit" value="Agregar" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-primary">Regresar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        function validateForm() {
+            var isValid = true;
+
+            // Campos que deben contener solo letras y tener máximo 120 caracteres
+            var letterFields = ["NombreAlmacen"];
+            var letterPattern = /^[A-Za-z\s]+$/;
+
+            letterFields.forEach(function (field) {
+                var input = document.querySelector('input[name="' + field + '"]');
+                if (input) {
+                    if (!letterPattern.test(input.value)) {
+                        input.setCustomValidity('Solo se permiten letras y espacios');
+                        isValid = false;
+                    } else if (input.value.length > 120) {
+                        input.setCustomValidity('El nombre del almacén no puede exceder los 120 caracteres');
+                        isValid = false;
+                    } else {
+                        input.setCustomValidity('');
+                    }
+                }
+            });
+
+            // Campos que deben contener solo números (con o sin decimales)
+            var numberFields = ["LugarAlmacen"];
+            var numberPattern = /^[A-Za-z\s]+$/;
+
+            letterFields.forEach(function (field) {
+                var input = document.querySelector('input[name="' + field + '"]');
+                if (input) {
+                    if (!letterPattern.test(input.value)) {
+                        input.setCustomValidity('Solo se permiten letras y espacios');
+                        isValid = false;
+                    } else if (input.value.length > 120) {
+                        input.setCustomValidity('El nombre del almacén no puede exceder los 120 caracteres');
+                        isValid = false;
+                    } else {
+                        input.setCustomValidity('');
+                    }
+                }
+            });
+
+            return isValid;
+        }
+    </script>
+}

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<notienendqver.Models.ViewModels.ViviendaViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Viviendas</h1>
+<hr/>
+<table class="table table-light">
+    <thead class="table table-success">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DirVivienda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AreaVivienda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoVivienda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoVivienda)
+            </th>
+            @*
+            <th>
+            @Html.DisplayNameFor(model => model.FechaCreacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodBeneficiarioNavigation)
+            </th>
+            *@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DirVivienda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AreaVivienda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoVivienda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoVivienda)
+            </td>
+            @*
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaCreacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodBeneficiarioNavigation.CodBeneficiario)
+            </td>
+            *@
+            <td>
+                    <a asp-action="Edit" class="fa-solid fa-pen-to-square" asp-route-id="@item.CodVivienda"></a>
+                    <a asp-action="Details" class="fa-solid fa-circle-info" asp-route-id="@item.CodVivienda"></a>
+                    <a asp-action="Delete" class="fa-solid fa-trash" asp-route-id="@item.CodVivienda"></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<p>
+    <a asp-action="Create" class="btn btn-success">Crear Vivienda</a>
+</p>
